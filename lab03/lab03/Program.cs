@@ -1,3 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using lab03.Containers;
 
-Console.WriteLine("Hello, World!");
+var container = new Container(10.0)
+{
+    CargoWeight = 12.0
+};
+
+//ArrayList
+List<int> numbers = new List<int>() { 1, 2, 3 };
+
+//Set
+HashSet<int> numberSet = new HashSet<int>() { 1, 2, 3 };
+//Map
+
+
