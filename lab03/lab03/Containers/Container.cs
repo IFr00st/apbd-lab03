@@ -6,14 +6,14 @@ using lab03.Interfaces;
 
 public class Container : IContainer
 {
-    private double _cargoWeight;
-    private double _cargoheight;
-    private double _containerWeight;
-    private double _containerDepth;
+    protected double _cargoWeight;
+    protected double _cargoheight;
+    protected double _containerWeight;
+    protected double _containerDepth;
     protected static int id = 0;
     protected string serialNumber;
     protected int _containerid;
-    private double _maxload;
+    protected double _maxload;
 
 
     public Container(double cargoheight, double containerWeight, double containerDepth, double maxload, double cargoWeight)
