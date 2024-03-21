@@ -30,7 +30,44 @@ public class Container : IContainer
 
 
     public double CargoWeight { get; set; }
-    public void Unload()
+
+    public double Cargoheight
+    {
+        get => _cargoheight;
+        set => _cargoheight = value;
+    }
+
+    public double ContainerDepth
+    {
+        get => _containerDepth;
+        set => _containerDepth = value;
+    }
+
+    public static int Id
+    {
+        get => id;
+        set => id = value;
+    }
+
+    public string SerialNumber
+    {
+        get => serialNumber;
+        set => serialNumber = value ?? throw new ArgumentNullException(nameof(value));
+    }
+
+    public int Containerid
+    {
+        get => _containerid;
+        set => _containerid = value;
+    }
+
+    public double Maxload
+    {
+        get => _maxload;
+        set => _maxload = value;
+    }
+
+    public virtual void Unload()
     {
         _cargoWeight = 0;
     }
@@ -40,6 +77,10 @@ public class Container : IContainer
         if (_cargoWeight + cargoWeight > _maxload)
         {
             throw new OverfillException("Too big cargo");
+        }
+        else
+        {
+            _cargoWeight += cargoWeight;
         }
     }
 }
