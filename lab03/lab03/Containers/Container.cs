@@ -25,7 +25,7 @@ public class Container : IContainer
         _maxload = maxload;
         CargoWeight = cargoWeight;
         _containerid = id++;
-        serialNumber = "CON-C-" + _containerid;
+        serialNumber = "CON-Typ-" + _containerid;
     }
 
 
