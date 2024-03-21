@@ -24,9 +24,10 @@ public class LiquidContainer : Container, IHazardNotifier
             _cargoheight += cargoWeight;
         }
     }
+    
 
     public void sendtextnote()
     {
-        Console.Out.Write("Dangerous operation !!!");
+        Console.Out.Write("Dangerous operation !!! \n  " + serialNumber );
     }
 }
