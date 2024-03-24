@@ -23,13 +23,16 @@ public class Container : IContainer
         _containerWeight = containerWeight;
         _containerDepth = containerDepth;
         _maxload = maxload;
-        CargoWeight = cargoWeight;
         _containerid = id++;
         serialNumber = "CON-Typ-" + _containerid;
     }
 
 
-    public double CargoWeight { get; set; }
+    public double CargoWeight
+    {
+        get => _cargoWeight;
+        set => _cargoWeight = value;
+    }
 
     public double Cargoheight
     {
@@ -80,7 +83,7 @@ public class Container : IContainer
         }
         else
         {
-            _cargoWeight += cargoWeight;
+            this._cargoWeight += cargoWeight;
         }
     }
 }

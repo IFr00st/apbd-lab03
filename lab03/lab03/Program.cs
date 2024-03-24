@@ -1,10 +1,11 @@
-﻿using lab03.Containers;
+﻿using lab03;
+using lab03.Containers;
 
-var container = new Container(10.0)
-{
-    CargoWeight = 12.0
-};
-
+ColdContainer cold = new ColdContainer(14, "Bananas", 10, 10, 10, 10, 0);
+cold.Load(5);
+Console.Write(cold.CargoWeight);
+Ship ship = new Ship(new List<Container>(), 10, 10, 30);
+ship.Containers1.Add(cold);
 //ArrayList
 List<int> numbers = new List<int>() { 1, 2, 3 };
 

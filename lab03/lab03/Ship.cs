@@ -1,7 +1,5 @@
 using System.Collections;
 using lab03.Containers;
-using Container = System.ComponentModel.Container;
-
 namespace lab03;
 
 public class Ship
@@ -17,5 +15,29 @@ public class Ship
         this.velocity = velocity;
         this.maxContainers = maxContainers;
         this.maxWeight = maxWeight;
+    }
+
+    public List<Container> Containers1
+    {
+        get => Containers;
+        set => Containers = value ?? throw new ArgumentNullException(nameof(value));
+    }
+
+    public double Velocity
+    {
+        get => velocity;
+        set => velocity = value;
+    }
+
+    public int MaxContainers
+    {
+        get => maxContainers;
+        set => maxContainers = value;
+    }
+
+    public double MaxWeight
+    {
+        get => maxWeight;
+        set => maxWeight = value;
     }
 }
