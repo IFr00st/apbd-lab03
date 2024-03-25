@@ -9,7 +9,6 @@ public class LiquidContainer : Container, IHazardNotifier
     public LiquidContainer(bool dangerous, double cargoheight, double containerWeight, double containerDepth, double maxload, double cargoWeight) : base(cargoheight, containerWeight, containerDepth, maxload, cargoWeight)
     {
         this.dangerous = dangerous;
-        _containerid = id++;
         serialNumber = "CON-L-" + _containerid;
     }
 

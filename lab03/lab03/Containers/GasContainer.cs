@@ -8,7 +8,6 @@ public class GasContainer : Container, IHazardNotifier
     public GasContainer(double pressure,double cargoheight, double containerWeight, double containerDepth, double maxload, double cargoWeight) : base(cargoheight, containerWeight, containerDepth, maxload, cargoWeight)
     {
         this.pressure = pressure;
-        _containerid = id++;
         serialNumber = "CON-G-" + _containerid;
     }
 
@@ -26,5 +25,10 @@ public class GasContainer : Container, IHazardNotifier
     public override void Unload()
     {
         _cargoWeight *= 0.05;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + " pressure: " + pressure;
     }
 }

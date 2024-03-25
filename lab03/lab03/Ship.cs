@@ -40,4 +40,37 @@ public class Ship
         get => maxWeight;
         set => maxWeight = value;
     }
+
+    public void load(List<Container> list)
+    {
+        foreach (var VARIABLE in list)
+        {
+            Containers.Add(VARIABLE);
+        }
+    }
+    
+    public void load(Container c)
+    {
+        Containers.Add(c);
+    }
+
+    public void remove(String x)
+    {
+        int index = -1;
+        foreach (var cont in Containers)
+        {
+            if (cont.SerialNumber.Equals(x))
+            {
+                index = Containers.IndexOf(cont);
+            }
+            
+        }
+
+        if (index != -1)
+        {
+            Containers.RemoveAt(index);
+        }
+    }
+    
+    
 }

@@ -86,4 +86,11 @@ public class Container : IContainer
             this._cargoWeight += cargoWeight;
         }
     }
+
+    public override string ToString()
+    {
+        return "id: " + _containerid + " SerialNumber: " + serialNumber + " CargoWeight: " + _cargoWeight +
+               " CargoHeight: " + _cargoheight + " containerWeight: " + _containerWeight + " containerDepth: " +
+               _containerDepth + " maxload: " + _maxload;
+    }
 }

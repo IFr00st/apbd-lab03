@@ -20,7 +20,8 @@ public class ColdContainer : Container
         else
         {
             this.temp = temp;
-            this.productType = productType;    
+            this.productType = productType;
+            serialNumber = "CON-C-" + _containerid;
         }
     }
 
@@ -41,5 +42,10 @@ public class ColdContainer : Container
 
         return tmp;
 
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + " productType: " + productType + " temp: " + temp;
     }
 }
