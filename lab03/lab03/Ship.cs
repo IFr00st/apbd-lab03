@@ -43,13 +43,17 @@ public class Ship
 
     public void load(List<Container> list)
     {
-        foreach (var VARIABLE in list)
+        foreach (var c in list)
         {
             if (Containers.Count == maxContainers)
             {
                 throw new Exception(" Too many containers on one ship!!");
             }
-            Containers.Add(VARIABLE);
+            if (c.CargoWeight + c.ContainerWeight + calcCurrentWeight() > maxWeight)
+            {
+                throw new Exception(" Too heavy weight!!!");
+            }
+            Containers.Add(c);
         }
     }
     
@@ -59,10 +63,15 @@ public class Ship
         {
             throw new Exception(" Too many containers on one ship!!");
         }
+        if (c.CargoWeight + c.ContainerWeight + calcCurrentWeight() > maxWeight)
+        {
+            throw new Exception(" Too heavy weight!!!");
+        }
         Containers.Add(c);
+        
     }
 
-    public void remove(String x)
+    public Container remove(String x)
     {
         int index = -1;
         foreach (var cont in Containers)
@@ -74,11 +83,49 @@ public class Ship
             
         }
 
+        Container tmp = null;
+      
+        
+
         if (index != -1)
         {
+            tmp = Containers[index];
             Containers.RemoveAt(index);
         }
+
+        if (tmp == null)
+        {
+            throw new Exception(" No such container on ship");
+        }    
+        return tmp;
     }
-    
-    
+
+    public void replaceCont(String x, Container c)
+    {
+        remove(x);
+        Containers.Add(c);
+        
+    }
+
+    public void moveContBetweenships(String x, Ship toShip)
+    {
+        Container tmp = remove(x);
+        toShip.load(tmp);
+    }
+
+    public double calcCurrentWeight()
+    {
+        double sum = 0;
+        foreach (var cont in Containers)
+        {
+            sum += cont.CargoWeight + cont.ContainerWeight;
+        }
+
+        return sum;
+    }
+
+    public override string ToString()
+    {
+        return "velocity: " + velocity + " maxContainers: " + maxContainers + "maxWeight: " + maxWeight;
+    }
 }

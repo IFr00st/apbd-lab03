@@ -70,6 +70,12 @@ public class Container : IContainer
         set => _maxload = value;
     }
 
+    public double ContainerWeight
+    {
+        get => _containerWeight;
+        set => _containerWeight = value;
+    }
+
     public virtual void Unload()
     {
         _cargoWeight = 0;
