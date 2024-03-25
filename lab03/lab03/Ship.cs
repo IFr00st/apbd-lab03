@@ -45,12 +45,20 @@ public class Ship
     {
         foreach (var VARIABLE in list)
         {
+            if (Containers.Count == maxContainers)
+            {
+                throw new Exception(" Too many containers on one ship!!");
+            }
             Containers.Add(VARIABLE);
         }
     }
     
     public void load(Container c)
     {
+        if (Containers.Count == maxContainers)
+        {
+            throw new Exception(" Too many containers on one ship!!");
+        }
         Containers.Add(c);
     }
 
