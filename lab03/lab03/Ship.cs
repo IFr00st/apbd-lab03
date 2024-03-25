@@ -126,6 +126,12 @@ public class Ship
 
     public override string ToString()
     {
-        return "velocity: " + velocity + " maxContainers: " + maxContainers + "maxWeight: " + maxWeight;
+        String x = "";
+        foreach (var cont in Containers)
+        {
+            x += cont;
+            x += "\n";
+        }
+        return "velocity: " + velocity + " maxContainers: " + maxContainers + " maxWeight: " + maxWeight + "\nContainers on ship: \n" + x;
     }
 }

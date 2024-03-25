@@ -1,6 +1,4 @@
-﻿using System.Collections.Specialized;
-using System.Security.AccessControl;
-using lab03;
+﻿using lab03;
 using lab03.Containers;
 
 ColdContainer cold = new ColdContainer(14, "Bananas", 10, 10, 10, 10, 0);
@@ -15,6 +13,9 @@ ship.load(cold);
 List<Container> list = new List<Container>();
 list.Add(new GasContainer(1,1,2,0,40,20));
 ship.load(list);
+
+Console.Write(ship);
+Console.Write("---------------------------------------\n");
 foreach (var cont in ship.Containers1)
 {
     Console.Write(cont +"\n");
